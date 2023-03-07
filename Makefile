@@ -4,30 +4,26 @@ OUTPUT = main
 OPTIONS = -std=c++0x 
 
 
-$(OUTPUT): obj/main.o obj/StbImage.o obj/Shader.o obj/Game.o obj/Camera.o obj/Player.o
-	g++ -o $(OUTPUT) obj/*.o $(LIBS)
+$(OUTPUT): $(OBJ)
+	g++ -o $(OUTPUT) *.o $(LIBS)
 	
-	
-obj/main.o: main.cpp object
-	g++ $(OPTIONS) -c -o obj/main.o main.cpp
+obj/main.o: main.cpp
+	g++ $(OPTIONS) -c -o main.o main.cpp
 
-obj/StbImage.o: StbImage.cpp object
-	g++ $(OPTIONS) -c -o obj/StbImage.o StbImage.cpp
+obj/StbImage.o: StbImage.cpp
+	g++ $(OPTIONS) -c -o StbImage.o StbImage.cpp
 	
-obj/Shader.o: Shader.cpp object
-	g++ $(OPTIONS) -c -o obj/Shader.o Shader.cpp
+obj/Shader.o: Shader.cpp
+	g++ $(OPTIONS) -c -o Shader.o Shader.cpp
 	
-obj/Game.o: Game.cpp object
-	g++ $(OPTIONS) -c -o obj/Game.o Game.cpp
+obj/Game.o: Game.cpp
+	g++ $(OPTIONS) -c -o Game.o Game.cpp
 	
-obj/Camera.o: Camera.cpp object
-	g++ $(OPTIONS) -c -o obj/Camera.o Camera.cpp
+obj/Camera.o: Camera.cpp
+	g++ $(OPTIONS) -c -o Camera.o Camera.cpp
 	
-obj/Player.o: Player.cpp object
-	g++ $(OPTIONS) -c -o obj/Player.o Player.cpp
-
-object:
-	mkdir obj
+obj/Player.o: Player.cpp
+	g++ $(OPTIONS) -c -o Player.o Player.cpp
 
 clean:
-	rm -rf obj main
+	rm -rf main *.o

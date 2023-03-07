@@ -8,8 +8,8 @@
 #include "Shader.hpp"
 
 const float CAMERA_SPEED = 0.05f;
-const float SCREEN_WIDTH = 1920.0f;
-const float SCREEN_HEIGHT = 1080.0f;
+const float SCREEN_WIDTH = 1368.0f;
+const float SCREEN_HEIGHT = 768.0f;
 
 class Camera {
 public:

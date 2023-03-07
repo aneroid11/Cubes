@@ -174,11 +174,11 @@ GLFWwindow* Game::InitGraphics() {
 	glfwWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
 	glfwWindowHint( GLFW_RESIZABLE, GL_FALSE );
 
-	//GLFWwindow* window = glfwCreateWindow( SCREEN_WIDTH, SCREEN_HEIGHT, "Eeeeee", nullptr, nullptr );
-	GLFWwindow* window = glfwCreateWindow( SCREEN_WIDTH, SCREEN_HEIGHT, "Eeeeee", glfwGetPrimaryMonitor(), nullptr );
+	GLFWwindow* window = glfwCreateWindow( SCREEN_WIDTH, SCREEN_HEIGHT, "Eeeeee", nullptr, nullptr );
+	//GLFWwindow* window = glfwCreateWindow( SCREEN_WIDTH, SCREEN_HEIGHT, "Eeeeee", glfwGetPrimaryMonitor(), nullptr );
 	glfwMakeContextCurrent( window );
 
-	glfwSetInputMode( window, GLFW_CURSOR, GLFW_CURSOR_DISABLED );
+	//glfwSetInputMode( window, GLFW_CURSOR, GLFW_CURSOR_DISABLED );
 
 	glewExperimental = GL_TRUE;
 	glewInit();
@@ -221,7 +221,6 @@ void Game::DestroyTexture( GLuint& texture0 ) {
 void Game::CreateObject( GLfloat vertices[], size_t size, GLuint& vertexBufferObject, GLuint& vertexArrayObject ) {
 	glGenVertexArrays( 1, &vertexArrayObject );
 	glGenBuffers( 1, &vertexBufferObject );
-
 
 	glBindVertexArray( vertexArrayObject );
 
